@@ -4,15 +4,18 @@ import CustomTextInput from "./components/CustomTextInput";
 import React from "react";
 
 export default function App() {
+  const [name, setName] = React.useState<string>("");
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Hello {name}</Text>
       <StatusBar style="auto" />
       <CustomTextInput
-        placeholder="Enter text"
-        onChangeText={(text: string) => console.log(text)}
-        value=""
+        placeholder="Enter name"
+        onChangeText={(text: string) => setName(text)}
+        value={name}
       />
+      ;
     </View>
   );
 }
